@@ -5,18 +5,20 @@
 {% endblock %}
 {% block content %}
 <section>
-<div class="image-container">
+  <div class="image-container">
     <img src="{% static 'img/IMG_7101.jpg' %}" alt="people" class="background-image">
     <div class="overlay-text">
-        <h1 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">Горы зовут</h1>
+        <h3 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">Горы зовут</h3>
         <h3 class="u-align-center u-text u-text-body-alt-color u-text-2">Я должен идти</h3>
         <h1 class="u-align-center u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Незабываемые туры</h1>
-        <h3 class="u-align-center u-text u-text-body-alt-color u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Погнали!</h3>
+        <h3 class="u-align-center u-text u-text-body-alt-color u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">По Кавказу и Алтаю</h3>
+        <h1 class="u-align-center u-text u-text-body-alt-color u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">ПОГНАЛИ!</h1>
         <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
-          Выбрать поход
+          ВЫБРАТЬ ПОХОД
         </a>
     </div>
 </div>
+</section>
 <div style="height: 30px;"></div>
 <section class="u-clearfix u-grey-80 u-section-2" id="sec-2">
   <div class="u-layout-row" style="display: flex; align-items: center; justify-content: center;">
@@ -24,8 +26,8 @@
           <img src="{% static 'img/22.jpg' %}" alt="bel" class="image-small" />
       </div>
       <div style="margin-left: 20px;">
-          <h2>Проведем без скуки</h2>
-          <p>Заставим нести тяжелый рюкзак</p>
+          <h2>Путешествие</h2>
+          <p>Которое запоминается на всю жизнь.</p>
       </div>
   </div>
 </section>
@@ -90,13 +92,15 @@
   <div class="image-container5">
     <img src="{% static 'img/IMG_8058.jpg' %}" alt="landscape" class="background-image5">
     <div class="overlay-text5">
-        <h2 class="u-align-left u-text u-text-body-alt-color u-text-2">Белуха</h2>
-        <h3 class="u-align-left u-text u-text-3">Поход к подножию</h3>
-        <h4 class="u-align-left u-text u-text-body-alt-color u-text-4">Алтай</h4>
-        <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
-          Читать далее
+        <h1 class="u-align-left u-text u-text-body-alt-color u-text-2">Больше информации</h1>
+        <h2 class="u-align-left u-text u-text-3">В нашем </h2>
+        <h2 class="u-align-left u-text u-text-body-alt-color u-text-4">Телеграм канале</h2>
+        <div style="height: 10px;"></div>
+        <a href="https://t.me/vse_v_pohod" class="u-btn u-button-style btn-custom">
+          Посмотреть
         </a>
     </div>
 </div>
+<script src="{% static 'js/script.js' %}"></script>
 </section>
 {% endblock %}

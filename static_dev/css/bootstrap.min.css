@@ -9,7 +9,6 @@ header {
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
 }
-
 header img {
     height: 100px; /* Высота логотипа */
 }
@@ -32,21 +31,27 @@ header img {
     background-color: #333; /* Цвет фона навигационной панели */
     font-family: 'Roboto', sans-serif; /* Укажите желаемый шрифт */
 }
-.nav-link {
-    color: white; /* Цвет текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px 30px; /* Увеличим внутренние отступы для формирования овальной формы */
-    border-radius: 25px; /* Устанавливаем высокое значение, чтобы углы были закруглены */
-    transition: background-color 0.3s; /* Плавный переход при наведении */
+header a {
+    color: white; /* Установили цвет текста белым */
+    padding: 5px;
+    text-decoration: none;
+    font-size: 18px; 
+    border-radius: 4px;
 }
 
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Фон при наведении */
+
+header a.logo {
+    font-size: 25px;
+    font-weight: bold;
 }
 
-.nav-link.active {
-    background-color: rgba(255, 255, 255, 0.3); /* Фон для активной ссылки */
-    color: #fff; /* Цвет текста для активной ссылки */
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый фон при наведении */
+    color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый цвет текста при наведении */
+}
+
+header a.active {
+    background-color: #FBC02D;
 }
 
 /* Стили для иконок */
@@ -63,6 +68,19 @@ footer {
     width: 100%; /* Футер занимает всю ширину */
     font-family: 'Roboto', sans-serif;
 }
+
+h1 {
+    font-size: 2em; /* Убедитесь, что заголовок достаточно большой */
+    color: white; /* Цвет текста, если фон темный */
+    margin: 20px 0; /* Отступы по желанию */
+    text-align: center; /* Центрирование по желанию */
+}
+
+h3 {
+    color: white; /* Цвет текста, если фон темный */
+    text-align: center;
+    margin: 10px 0; /* Отступы по желанию */
+}
 .image-container {
     position: relative; /* Позволяет позиционировать текст относительно контейнера */
     text-align: center; /* Центрирование текста */
@@ -74,6 +92,16 @@ footer {
     height: auto; /* Автоматическая высота для сохранения пропорций */
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Начальная непрозрачность */
+        transform: translateX(-20px); /* Начальная позиция (сдвинут влево) */
+    }
+    to {
+        opacity: 1; /* Конечная непрозрачность */
+        transform: translateX(0); /* Конечная позиция */
+    }
+}
 .overlay-text {
     position: absolute; /* Абсолютное позиционирование для текста */
     top: 0; /* Начало с верхней части контейнера */
@@ -86,7 +114,13 @@ footer {
     align-items: center; /* Центрирование по горизонтали */
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
     color: white; /* Цвет текста */
+    font-size: 30px; 
     font-family: 'Roboto', sans-serif; /* Используем загруженный шрифт */
+    z-index: 2; /* Текст будет поверх фона */
+    opacity: 0; /* Начальное состояние */
+    transform: translateY(0); /* Начальная позиция (сдвинут влево) */
+    animation: slideIn 3s ease forwards; /* Применяем анимацию */
+    transition: opacity 2s ease, transform 2s ease; /* Плавный переход */
 }
 .btn-custom {
     background-color: transparent; /* Прозрачный фон */
@@ -210,23 +244,45 @@ body {
     width: 100%; /* чтобы изображение занимало всю ширину контейнера */
     height: auto; /* сохранить пропорции изображения */
     object-fit: cover; /* позволяет увеличить изображение, чтобы оно заполнило контейнер, обрезая его по необходимости */
-    position: absolute; /* сделаем изображение абсолютным для правильного позиционирования */
+    position: absolute; /* делаем изображение абсолютным для правильного позиционирования */
     top: -300px; /* изображение будет начинаться с верхней части контейнера */
     left: 0;
+    z-index: 0; /* фон будет позади */
+}
+
+.overlay-background5 {
+    position: absolute; /* абсолютное позиционирование для фона  */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 1; /* фон под текстом */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Начальная непрозрачность */
+        transform: translateX(-20px); /* Начальная позиция (сдвинут влево) */
+    }
+    to {
+        opacity: 1; /* Конечная непрозрачность */
+        transform: translateX(0); /* Конечная позиция */
+    }
 }
 
 .overlay-text5 {
-    position: absolute;
-    top: 0; /* выравнивание по верхнему краю */
-    left: 0; /* выравнивание по левому краю */
-    width: 100%; /* Занимает всю ширину контейнера */
-    height: 100%; /* Занимает всю высоту контейнера */
-    display: flex; /* Используем flexbox для центровки текста */
-    flex-direction: column; /* Вертикальная ориентация текста */
-    justify-content: center; /* Центрирование по вертикали */
-    align-items: flex-start; /* Выравнивание текста по левому краю */
-    color: white; /* цвет текста */
-    padding: 20px; /* отступы внутри блока текста */
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
-    font-family: 'Roboto', sans-serif; /* Используем загруженный шрифт */
+    position: relative; /* Разместим текст относительно контейнера */
+    top: 300px; /* Убедитесь, что это значение корректно */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Выровняем текст по левому краю */
+    color: white;
+    padding: 20px;
+    margin-left: 200px; /* Отступ внутри блока текста от левого края */
+    z-index: 2; /* Текст будет поверх фона */
+    opacity: 0; /* Начальное состояние */
+    transform: translateX(-20px); /* Начальная позиция (сдвинут влево) */
+    transition: opacity 1s ease, transform 1s ease; /* Плавный переход */
 }
