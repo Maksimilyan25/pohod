@@ -1,7 +1,102 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
   Все в поход! Главная
 {% endblock %}
 {% block content %}
-  <h1>Главная страница</h1>
+<section>
+<div class="image-container">
+    <img src="{% static 'img/IMG_7101.jpg' %}" alt="people" class="background-image">
+    <div class="overlay-text">
+        <h1 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">Горы зовут</h1>
+        <h3 class="u-align-center u-text u-text-body-alt-color u-text-2">Я должен идти</h3>
+        <h1 class="u-align-center u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Незабываемые туры</h1>
+        <h3 class="u-align-center u-text u-text-body-alt-color u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Погнали!</h3>
+        <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+          Выбрать поход
+        </a>
+    </div>
+</div>
+<div style="height: 30px;"></div>
+<section class="u-clearfix u-grey-80 u-section-2" id="sec-2">
+  <div class="u-layout-row" style="display: flex; align-items: center; justify-content: center;">
+      <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="400" data-image-height="500" style="flex: 0 0 auto;">
+          <img src="{% static 'img/22.jpg' %}" alt="bel" class="image-small" />
+      </div>
+      <div style="margin-left: 20px;">
+          <h2>Проведем без скуки</h2>
+          <p>Заставим нести тяжелый рюкзак</p>
+      </div>
+  </div>
+</section>
+<div style="height: 30px;"></div>
+<section class="u-clearfix u-grey-80 u-section-3" id="sec-3">
+  <div class="container">
+      <div class="box">
+          <img src="{% static 'img/167725.png' %}" alt="Image 1" class="small-image2" />
+          <h2>Исследуй</h2>
+          <h3>Природу, животных, горы!</h3>
+      </div>
+      <div class="box">
+          <img src="{% static 'img/1090663.png' %}" alt="Image 2" class="small-image2" />
+          <h2>Путешествуй</h2>
+          <h3>По стране, континенту, миру!</h3>
+      </div>
+      <div class="box">
+          <img src="{% static 'img/1600565.png' %}" alt="Image 3" class="small-image2" />
+          <h2>Наслаждайся</h2>
+          <h3>Жизнью!</h3>
+      </div>
+  </div>
+</section>
+<div style="height: 120px;"></div>
+<section>
+  <div class="image-container2">
+    <div class="text-container2">
+      <h2>Шавлинские озера</h2>
+      <h3>Неописуемое место на Алтае.</h3>
+      <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+        Подробнее
+      </a>
+    </div>
+    <img src="{% static 'img/shav.jpg' %}" alt="Image 4" class="rounded-image">
+  </div>
+</section>
+<div style="height: 120px;"></div>
+<section class="collage-container3">
+  <div class="image-wrapper">
+      <img src="{% static 'img/alone.jpg' %}" alt="Photo 1" class="rounded-image3">
+  </div>
+  <div class="image-wrapper">
+      <img src="{% static 'img/sidim2.jpg' %}" alt="Photo 2" class="rounded-image3">
+  </div>
+  <div class="image-wrapper">
+      <img src="{% static 'img/idem.jpg' %}" alt="Photo 3" class="rounded-image3">
+  </div>
+</section>
+<div style="height: 20px;"></div>
+<section>
+  <div class="text-container4">
+    <h2>Поход к подножию Белухи</h2>
+    <h3>Треккинг к Белухе – это отличная возможность отдохнуть от цивилизации,</h3>
+    <h3>увидеть высочайшую гору Сибири и при этом не перегрузить организм подъемами на большие высоты...</h3>
+    <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+      Читать далее
+    </a>
+  </div>
+</section>
+<div style="height: 20px;"></div>
+<section>
+  <div class="image-container5">
+    <img src="{% static 'img/IMG_8058.jpg' %}" alt="landscape" class="background-image5">
+    <div class="overlay-text5">
+        <h2 class="u-align-left u-text u-text-body-alt-color u-text-2">Белуха</h2>
+        <h3 class="u-align-left u-text u-text-3">Поход к подножию</h3>
+        <h4 class="u-align-left u-text u-text-body-alt-color u-text-4">Алтай</h4>
+        <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+          Читать далее
+        </a>
+    </div>
+</div>
+</section>
 {% endblock %}

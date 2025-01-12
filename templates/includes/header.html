@@ -1,9 +1,10 @@
 {% load static %}
 {% with request.resolver_match.view_name as view_name %}
 <header>
-  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+  <nav>
     <div class="container">
-      <img src="{% static 'img/AdvTime2.png' %}" height="50" alt="">
+      <a href="{% url 'homepage:index' %}">
+      <img src="{% static 'img/IMG_8898.png' %}" height="100" alt="">
       <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link {% if view_name  == 'homepage:index' %}active{% endif %}" href="{% url 'homepage:index' %}">
@@ -11,11 +12,19 @@
             </a>
         </li>
         <li class="nav-item">
-          <!-- тут должна быть ссылка на страницу со списком мороженного
-          Текст на ссылке: Список мороженого -->
             <a class="nav-link {% if view_name  == 'catalog:pohod_list' %}active{% endif %}" href="{% url 'catalog:pohod_list' %}">
                 Список походов
             </a>
+        </li>
+        <li class='nav-item'>
+          <a class="nav-link" href="https://t.me/vse_v_pohod">
+            <img src="{% static 'img/1604538.png' %}" alt="Telegram" style="width: 30px; height: 30px;">
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class="nav-link" href="https://www.instagram.com/vse.v.pokhod">
+            <img src="{% static 'img/inst.png' %}" alt="Instagram" style="width: 30px; height: 30px;">
+          </a>
         </li>
       </ul>
     </div>
