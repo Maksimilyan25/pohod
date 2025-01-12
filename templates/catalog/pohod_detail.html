@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ catalog.title }} - Каталог походов.
+{% endblock %}
+
+{% block content %}
+  <h1 align="center">{{ catalog.title }}</h1>
+  <div class="centered-text">
+    <p>{{ catalog.description }}</p>
+  </div>
+  {% if catalog.image %}
+    <img src="{{ catalog.image.url }}" alt="{{ catalog.title }}" style="max-width: 600px;">
+  {% endif %}
+{% endblock %}

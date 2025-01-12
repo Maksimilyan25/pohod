@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Все в поход! Список походов.
+{% endblock %}
+
+{% block content %}
+  <h1>Каталог походов</h1>
+    {% for catalog in catalog %}
+    <h3>{{ catalog.title }}</h3>
+    <p>{{ catalog.description|truncatewords:10 }}</p>
+    <a href="{% url 'catalog:pohod_detail' catalog.id %}">Подробнее</a>
+    {% endfor %} 
+{% endblock %}
