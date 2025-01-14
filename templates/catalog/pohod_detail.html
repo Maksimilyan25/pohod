@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
   {{ catalog.title }} - Каталог походов.
 {% endblock %}
 
 {% block content %}
-  <h1 align="center">{{ catalog.title }}</h1>
-  <div class="centered-text">
+<section>
+  <div class="image-container">
+    <img src="{{ catalog.image.url }}" alt="people" class="background-image">
+    <div class="overlay-backgrounddetail"></div>
+    <div class="overlay-textdetail">
+    <h1>{{ catalog.title }}</h1>
     <p>{{ catalog.description }}</p>
+    <h3>Количество дней: {{ catalog.duration }}</h3>
+    <h3>Километры: {{ catalog.distance }}</h3>
+    </div>
   </div>
-  {% if catalog.image %}
-    <img src="{{ catalog.image.url }}" alt="{{ catalog.title }}" style="max-width: 600px;">
-  {% endif %}
+</section>
 {% endblock %}

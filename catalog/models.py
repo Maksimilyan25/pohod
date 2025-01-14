@@ -15,6 +15,10 @@ class Catalog(models.Model):
         default=False,
         help_text='Снимите галочку, чтобы скрыть публикацию.'
     )
+    region = models.CharField('Регион', max_length=30, blank=True)
+    duration = models.CharField('Длительность', max_length=50, blank=True)
+    distance = models.CharField('Расстояние', max_length=255, blank=True)
+
 
     class Meta:
         verbose_name = 'Каталог'

@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
   Все в поход! Список походов.
 {% endblock %}
 
 {% block content %}
+<section>
+  <div class="image-container">
+    <img src="{% static 'img/vverh.jpg' %}" alt="people" class="background-image">
+    <div class="overlay-text">
+        <h3 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">Ваше</h3>
+        <h3 class="u-align-center u-text u-text-body-alt-color u-text-2">Приключение</h3>
+        <h1 class="u-align-center u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Мечты</h1>
+        <h1 class="u-align-center u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Начинается</h1>
+        <h1 class="u-align-center u-text u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Здесь</h1>
+    </div>
+</div>
+<section>
   <h1>Каталог походов</h1>
-    {% for catalog in catalog %}
-    <h3>{{ catalog.title }}</h3>
-    <p>{{ catalog.description|truncatewords:10 }}</p>
-    <a href="{% url 'catalog:pohod_detail' catalog.id %}">Подробнее</a>
-    {% endfor %} 
+  {% for catalog in catalog %}
+  <div class="catalog-item">
+    <img src="{{ catalog.image.url }}" alt="{{ catalog.title }}" class="catalog-image">
+    <div class="catalog-content">
+      <h2>{{ catalog.title }}</h2>
+      <p>{{ catalog.description|truncatewords:10 }}</p>
+      <a href="{% url 'catalog:pohod_detail' catalog.id %}" class="read-more-button">Читать подробнее</a>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 {% endblock %}

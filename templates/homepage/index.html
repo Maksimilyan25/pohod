@@ -57,7 +57,7 @@
     <div class="text-container2">
       <h2>Шавлинские озера</h2>
       <h3>Неописуемое место на Алтае.</h3>
-      <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+      <a href="{% url 'catalog:pohod_detail' 4 %}" class="u-btn u-button-style btn-custom">
         Подробнее
       </a>
     </div>
@@ -82,7 +82,7 @@
     <h2>Поход к подножию Белухи</h2>
     <h3>Треккинг к Белухе – это отличная возможность отдохнуть от цивилизации,</h3>
     <h3>увидеть высочайшую гору Сибири и при этом не перегрузить организм подъемами на большие высоты...</h3>
-    <a href="{% url 'catalog:pohod_list' %}" class="u-btn u-button-style btn-custom">
+    <a href="{% url 'catalog:pohod_detail' 5 %}" class="u-btn u-button-style btn-custom">
       Читать далее
     </a>
   </div>
@@ -91,10 +91,11 @@
 <section>
   <div class="image-container5">
     <img src="{% static 'img/IMG_8058.jpg' %}" alt="landscape" class="background-image5">
+    <div class="overlay-background5"></div>
     <div class="overlay-text5">
-        <h1 class="u-align-left u-text u-text-body-alt-color u-text-2">Больше информации</h1>
-        <h2 class="u-align-left u-text u-text-3">В нашем </h2>
-        <h2 class="u-align-left u-text u-text-body-alt-color u-text-4">Телеграм канале</h2>
+        <h1>Больше информации</h1>
+        <h2>В нашем </h2>
+        <h2>Телеграм канале</h2>
         <div style="height: 10px;"></div>
         <a href="https://t.me/vse_v_pohod" class="u-btn u-button-style btn-custom">
           Посмотреть

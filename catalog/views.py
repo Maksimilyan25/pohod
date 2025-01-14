@@ -1,17 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView
 
 from .models import Catalog
 
 
-def pohod_list(request):
-    catalog = Catalog.objects.filter(is_published=True)  # Получаем только опубликованные походы
-    template = 'catalog/pohod_list.html'
-    context = {'catalog': catalog}
-    return render(request, template, context)
+class PohodListView(ListView):
+    model = Catalog  # Модель каталог с полями.
+    template_name = 'catalog/pohod_list.html'
+    context_object_name = 'catalog'
+
+    def get_queryset(self):
+        return Catalog.objects.filter(is_published=True)
 
 
-def pohod_detail(request, pk):
-    catalog = get_object_or_404(Catalog, id=pk)  # Загружаем поход по ID
-    template = 'catalog/pohod_detail.html'
-    context = {'catalog': catalog}  # Передаем единственный элемент в контекст
-    return render(request, template, context)
+class PohodDetailView(DetailView):
+    model = Catalog  # Модель каталог с полями.
+    template_name = 'catalog/pohod_detail.html'  # Путь к вашему шаблону
+    context_object_name = 'catalog'  # Имя переменной в шаблоне

@@ -272,7 +272,7 @@ body {
 }
 
 .overlay-text5 {
-    position: relative; /* Разместим текст относительно контейнера */
+    position: absolute; /* Разместим текст относительно контейнера */
     top: 300px; /* Убедитесь, что это значение корректно */
     display: flex;
     flex-direction: column;
@@ -280,9 +280,84 @@ body {
     align-items: flex-start; /* Выровняем текст по левому краю */
     color: white;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
     margin-left: 200px; /* Отступ внутри блока текста от левого края */
     z-index: 2; /* Текст будет поверх фона */
     opacity: 0; /* Начальное состояние */
     transform: translateX(-20px); /* Начальная позиция (сдвинут влево) */
     transition: opacity 1s ease, transform 1s ease; /* Плавный переход */
+}
+
+.catalog-item {
+    display: flex; /* Используем Flexbox для размещения элементов в строку */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    margin-bottom: 20px; /* Отступ между элементами каталога */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Добавляем разделительную линию */
+}
+
+.catalog-image {
+    width: 500px; /* Задайте ширину изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+    margin-right: 20px; /* Отступ между изображением и текстом */
+}
+
+.catalog-content {
+    flex: 1; /* Позволяем текстовому блоку занимать оставшееся пространство */
+}
+.catalog-content h3 {
+    margin: 0; /* Убираем отступы у заголовка */
+}
+
+.catalog-content p {
+    margin: 0; /* Убираем отступы у описания */
+    flex-grow: 1; /* Позволяем описанию занимать оставшееся пространство */
+    margin-right: 10px; /* Добавляем отступ справа для разделения с кнопкой */
+}
+
+.read-more-button {
+    display: inline-block; /* Делаем кнопку блочным элементом */
+    margin-top: 10px; /* Отступ сверху для кнопки */
+    padding: 10px 15px; /* Отступы внутри кнопки */
+    background-color: transparent; /* Прозрачный фон кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Белая рамка с прозрачностью */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
+}
+
+.read-more-button:hover {
+    background-color: rgb(255, 255, 255); /* Цвет фона кнопки при наведении */
+    color: black; /* Цвет текста кнопки при наведении */
+}
+
+
+.overlay-backgrounddetail {
+    position: absolute; /* Абсолютное позиционирование для фона */
+    top: 0; /* Начало с верхней части контейнера */
+    left: 0; /* Начало с левой части контейнера */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 1; /* Фон будет под текстом */
+}
+
+.overlay-textdetail {
+    position: absolute; /* Абсолютное позиционирование для текста */
+    top: 0; /* Начало с верхней части контейнера */
+    left: 0; /* Начало с левой части контейнера */
+    width: 100%; /* Ширина на 100% */
+    height: 100%; /* Высота на 100% */
+    display: flex; /* Используем flexbox для центрирования текста */
+    flex-direction: column; /* Вертикальное выравнивание текста */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    color: white; /* Цвет текста */
+    font-size: 30px; 
+    font-family: 'Roboto', sans-serif; /* Используем загруженный шрифт */
+    z-index: 2; /* Текст будет поверх фона */
+    opacity: 0; /* Начальное состояние */
+    transform: translateY(0); /* Начальная позиция (сдвинут влево) */
+    animation: slideIn 3s ease forwards; /* Применяем анимацию */
+    transition: opacity 2s ease, transform 2s ease; /* Плавный переход */
 }

@@ -14,7 +14,7 @@ DEBUG = True
 
 MEDIAURL = 'static_dev/img/'
 
-MEDIAROOT = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 ALLOWED_HOSTS = []
 

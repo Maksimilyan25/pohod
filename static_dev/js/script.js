@@ -48,3 +48,21 @@ document.addEventListener("DOMContentLoaded", function() {
     initFirstScript();
     initSecondScript();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const poemElement = document.getElementById('overlay-textdetail');
+    const text = poemElement.innerText;
+    const words = text.split(' '); // Разбиваем текст на слова
+    let newText = '';
+    
+    for (let i = 0; i < words.length; i++) {
+        newText += words[i] + ' ';
+        
+        // Проверяем, нужно ли добавить разрыв строки
+        if ((i + 1) % 4 === 0) {
+            newText += '\n'; // Добавляем перенос строки после каждых 4 слов
+        }
+    }
+    
+    poemElement.innerText = newText; // Обновляем текст с переносами
+});
